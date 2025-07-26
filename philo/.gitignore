@@ -1,0 +1,6 @@
+philo
+build/
+*.o
+
+# ignore .vscode
+.vscode

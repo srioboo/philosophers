@@ -31,8 +31,9 @@ RM = @rm
 SFLAG = -s
 
 # Source files and objects
+BUILD_DIR = build
 SRCS = philo.c
-OBJS = $(SRCS:.c=.o )
+OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
@@ -40,12 +41,13 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(COLOUR_GREEN)\n$(NAME) compiled!\n$(COLOUR_END)"
 
-%.o: %.c
+$(BUILD_DIR)/%.o: %.c
+	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(COLOUR_BLUE)Compiling: $(COLOUR_END)$<"
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) -fr $(BUILD_DIR)
 
 fclean: clean
 	$(RM) $(NAME)

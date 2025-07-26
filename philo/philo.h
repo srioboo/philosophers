@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salrio <salrio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/16 23:05:06 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/26 20:23:42 by salrio           ###   ########.fr       */
+/*   Created: 2025/07/26 20:16:32 by salrio            #+#    #+#             */
+/*   Updated: 2025/07/26 20:19:41 by salrio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#ifndef PHILO_H
+#define PHILO_H
 
-int	main(int argc, char **argv)
-{
-	(void) argv;
+# include <stdio.h>
 
-	if (argc == 6)
-		printf("6 parameters number_of_philosophers time_to_die time_to_eat time_to_sleep number_of_times_each_philosopher_must_eat");
-	else if (argc == 5)
-		printf("5 parameters number_of_philosophers time_to_die time_to_eat time_to_sleep");
-	else
-		printf("need parameters");
-	return (0);
-}
+# define FALSE 0
+# define TRUE 1
+
+#endif
