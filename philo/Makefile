@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
+#    By: salrio <salrio@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 22:29:52 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/05 22:34:03 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/26 22:20:21 by salrio           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SFLAG = -s
 
 # Source files and objects
 BUILD_DIR = build
-SRCS = philo.c
+SRCS = philo.c \
+		utils.c
 OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
