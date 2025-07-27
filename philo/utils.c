@@ -1,13 +1,25 @@
-# include "philo.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/01 15:08:14 by srioboo-          #+#    #+#             */
+/*   Updated: 2025/08/01 15:08:15 by srioboo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int		is_digit(int c)
+#include "philo.h"
+
+static int	is_digit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (TRUE);
 	return (FALSE);
 }
 
-long	time_to_milisec()
+long	time_to_milisec(void)
 {
 	struct timeval	time_value;
 	long			miliseconds;
@@ -19,14 +31,14 @@ long	time_to_milisec()
 	return (miliseconds);
 }
 
-int		is_number(char *str)
+int	is_number(char *str)
 {
-	int p;
+	int	p;
 
 	p = 0;
-	while(str[p])
+	while (str[p])
 	{
-		if(is_digit(str[p]))
+		if (is_digit(str[p]))
 			return (FALSE);
 		p++;
 	}

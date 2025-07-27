@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 22:29:52 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/27 16:09:55 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/28 21:53:04 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ NAME = philo
 # Compile and other commands
 CC = @cc
 MAKE = @make -C
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g -pthread
 AR = @ar rcs
 RM = @rm
 SFLAG = -s
@@ -59,7 +60,10 @@ fclean: clean
 re: fclean all
 
 test: all
-	./$(NAME) 1 300 800 400
+	./$(NAME) 4 300 800 400
+
+debug: all
+	gdb ./$(NAME) 4 300 800 400
 
 norm:
 	norminette *.c *.h

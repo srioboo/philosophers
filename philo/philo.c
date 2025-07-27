@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 23:05:06 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/27 16:04:17 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/08/01 15:06:24 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int ac, char **av)
 {
-	t_philo_data *philo_data;
-	
+	t_philo_data	*philo_data;
+
 	philo_data = malloc(sizeof philo_data);
 	if (ac >= 5 && ac <= 6)
 	{
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 		printf("Error: too much parameters\n");
 	else
 		printf("Error: not enought parameters\n");
-	
+
 	printf("TEST: time %ld\n", time_to_milisec());
 	return (0);
 }
