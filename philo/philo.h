@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 20:16:32 by salrio            #+#    #+#             */
-/*   Updated: 2025/07/27 09:52:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/27 13:30:38 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ long	time_to_milisec();
 int		validate_parameters(int ac, char **av);
 
 int		is_number(char *str);
+
+t_philo_data	*init_filo_data(t_philo_data *data, int ac, char **av);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 23:05:06 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/27 13:16:33 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/27 13:32:32 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 int	main(int ac, char **av)
 {
-	(void) av;
-
+	t_philo_data *philo_data;
+	
+	philo_data = malloc(sizeof philo_data);
 	if (ac >= 5 && ac <= 6)
 	{
 		if (validate_parameters(ac, av) == FALSE)
+		{
 			printf("Error: non numeric parameter found\n");
-		printf("6 parameters number_of_philosophers time_to_die time_to_eat time_to_sleep number_of_times_each_philosopher_must_eat\n");
+			return (1);
+		}
+		philo_data = init_filo_data(philo_data, ac, av);
 	}
 	else if (ac > 5)
 		printf("Error: too much parameters\n");
