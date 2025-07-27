@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 22:29:52 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/27 16:01:13 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/27 16:09:55 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,9 @@ fclean: clean
 
 re: fclean all
 
+test: all
+	./$(NAME) 1 300 800 400
+
 norm:
 	norminette *.c *.h
 
@@ -72,4 +75,4 @@ val: all
 vall: all
 	valgrind --leak-check=full --verbose --track-origins=yes --log-file=leaks.txt ./$(NAME)
 
-.PHONY: all clean fclean re sane val vall debug
+.PHONY: all clean fclean re sane val vall debug test
