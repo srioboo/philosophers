@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 23:05:06 by srioboo-          #+#    #+#             */
-/*   Updated: 2025/07/27 13:32:32 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:04:17 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int ac, char **av)
 			return (1);
 		}
 		philo_data = init_filo_data(philo_data, ac, av);
+		start_routine(philo_data);
 	}
 	else if (ac > 5)
 		printf("Error: too much parameters\n");

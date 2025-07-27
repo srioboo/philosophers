@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 22:29:52 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/27 13:23:27 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/07/27 16:01:13 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ BUILD_DIR = build
 SRCS = philo.c \
 		utils.c \
 		validate.c \
-		initialization.c
+		initialization.c \
+		routine.c
 OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)

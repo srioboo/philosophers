@@ -6,7 +6,7 @@
 /*   By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 20:16:32 by salrio            #+#    #+#             */
-/*   Updated: 2025/07/27 13:30:38 by srioboo-         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:05:23 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ typedef struct s_philo_data
 typedef struct s_philosofer
 {
 	// TODO - add data
+	int				philo_id;
+	int				*forks;
+	int				start_eating;
+	int				start_thinking;
+	int				start_sleeping;
 	t_philo_data	*filo;
 }	t_philosofer;
 
@@ -43,5 +48,10 @@ int		validate_parameters(int ac, char **av);
 int		is_number(char *str);
 
 t_philo_data	*init_filo_data(t_philo_data *data, int ac, char **av);
+
+
+// TODO - need improve
+void	start_routine(t_philo_data *data);
+void	philosofer_routine(long current_time, t_philosofer *philo);
 
 #endif
