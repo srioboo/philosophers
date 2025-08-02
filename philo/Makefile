@@ -6,7 +6,7 @@
 #    By: srioboo- <srioboo-@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 22:29:52 by srioboo-          #+#    #+#              #
-#    Updated: 2025/07/28 21:53:04 by srioboo-         ###   ########.fr        #
+#    Updated: 2025/08/02 12:06:38 by srioboo-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,12 +33,13 @@ SFLAG = -s
 
 # Source files and objects
 BUILD_DIR = build
-SRCS = philo.c \
-		utils.c \
-		validate.c \
-		initialization.c \
-		routine.c
-OBJS = $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
+SRC_DIR = src
+SRCS = $(SRC_DIR)/philo.c \
+		$(SRC_DIR)/utils.c \
+		$(SRC_DIR)/validate.c \
+		$(SRC_DIR)/initialization.c \
+		$(SRC_DIR)/routine.c
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 
 all: $(NAME)
 
@@ -46,7 +47,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(COLOUR_GREEN)\n$(NAME) compiled!\n$(COLOUR_END)"
 
-$(BUILD_DIR)/%.o: %.c
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(COLOUR_BLUE)Compiling: $(COLOUR_END)$<"
